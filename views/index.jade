@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+  script.
+    var source = new EventSource('/test/collections');
+
+    source.addEventListener('message', function(e){
+      console.log(e.data);
+    }, false);
+
+  h1= title
+  p Welcome to #{title}
